@@ -33,6 +33,7 @@
       :local="place.location.localtime"
       :wheaterT="place.current.temp_f"
       :wheaterC="place.current.temp_c"
+      :src="place.current.condition.icon"
       ></WheaterCard>
     </div>
   </main>

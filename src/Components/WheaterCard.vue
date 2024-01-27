@@ -1,5 +1,5 @@
 <template>
-    <div class="text-white p-10 rounded-lg shadow-lg gap-6 mb-6 relative overflow-hidden">
+    <div :class="bgClass()" class="text-white p-10 rounded-lg shadow-lg gap-6 mb-6 relative overflow-hidden">
       <!-- Location & time -->
       <div class="mb-2 flex justify-between items-center">
         <div class="flex items-center justify-center gap-2">
@@ -41,4 +41,8 @@
   </template>
 <script setup>
 const props = defineProps(['name','local','wheaterT','wheaterC','src'])
+const bgClass = ()=>{
+  const time = new Date(props.local).getHours();
+  return time < 20 ? 'bg-yellow-300' : 'bg-slate-600';
+}
 </script>
