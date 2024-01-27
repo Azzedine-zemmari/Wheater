@@ -1,5 +1,8 @@
 <script setup>
 import { reactive } from 'vue';
+
+const emit = defineEmits(['place-data'])
+
 const searchTerm = reactive({
         query:'',
         timout:null,
@@ -19,14 +22,15 @@ const handleShearchTerm = ()=>{
         }
     },500)
 }
-let wheaterData = null
+
 const getWheater = (id)=>{
     if(id){
         fetch(`http://api.weatherapi.com/v1/forecast.json?key=3c67497885894786bf5103257242701&q=id:${id}&days=3&aqi=no&alerts=no`)
         .then(response => response.json())
             .then(data => {
-                console.log(data);
-                wheaterData = data;
+                emit('place-data',data);
+                searchTerm.query = ''
+                searchTerm.results = null
             })
     }
 }

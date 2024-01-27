@@ -1,5 +1,11 @@
   <script setup>
-    import Compoenent from './ComponentSearch.vue'
+    import { ref } from 'vue';
+    import Compoenent from './Components/ComponentSearch.vue'
+    import WheaterCard from './Components/WheaterCard.vue';
+    const places = ref([])
+    const addPlace = (data)=>{
+      places.value.push(data)
+    }
   </script>
 
 <template>
@@ -17,7 +23,17 @@
     </div>
     <!-- SEARCH -->
     <div>
-      <Compoenent></Compoenent>
+      <Compoenent @place-data="addPlace"></Compoenent>
+    </div>
+
+    <!-- Cards -->
+    <div v-for="place in places">
+      <WheaterCard 
+      :name="place.location.name"
+      :local="place.location.localtime"
+      :wheaterT="place.current.temp_f"
+      :wheaterC="place.current.temp_c"
+      ></WheaterCard>
     </div>
   </main>
 </template>
