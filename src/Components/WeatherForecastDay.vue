@@ -10,15 +10,15 @@ defineProps({
     <table class="w-full">
       <tr>
         <!-- day of the week -->
-        <td class="w-1/3">{{ new Date(day.date).toLocaleDateString('en-MA',{weekday:'long'} )}}</td>
+        <td class="w-1/3 text-base md:text-xl">{{ new Date(day.date).toLocaleDateString('en-MA',{weekday:'long'} )}}</td>
 
         <!-- icon -->
         <td class="w-1/3">
-          <img :src="day.day.condition.icon" alt="icon" width="30" class="mx-auto" />
+          <img :src="day.day.condition.icon" class=" mx-auto" alt="icon" />
         </td>
 
         <!-- high/low temp -->
-        <td class="w-1/3 text-right">{{ Math.round(day.day.maxtemp_c) }} / {{ Math.round(day.day.mintemp_c) }}</td>
+        <td class="w-1/3 text-right hidden md:flex md:text-lg mt-5">{{ Math.round(day.day.maxtemp_c) }} / {{ Math.round(day.day.mintemp_c) }}</td>
       </tr>
     </table>
   </div>
