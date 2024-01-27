@@ -27,14 +27,12 @@
     </div>
 
     <!-- Cards -->
-    <div v-for="place in places">
-      <WheaterCard 
-      :name="place.location.name"
-      :local="place.location.localtime"
-      :wheaterT="place.current.temp_f"
-      :wheaterC="place.current.temp_c"
-      :src="place.current.condition.icon"
-      ></WheaterCard>
+    <div class="grid grid-cols-2 gap-4">
+      <div v-for="plase in places">
+        <WheaterCard 
+        :place="plase"
+        ></WheaterCard>
+      </div>
     </div>
   </main>
 </template>

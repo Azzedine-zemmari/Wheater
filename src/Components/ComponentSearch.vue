@@ -4,36 +4,37 @@ import { reactive } from 'vue';
 const emit = defineEmits(['place-data'])
 
 const searchTerm = reactive({
-        query:'',
-        timout:null,
-        results:null
+  query:'',
+  timout:null,
+  results:null
 })
 const handleShearchTerm = ()=>{
-    clearTimeout(searchTerm.timout)
-    searchTerm.timout = setTimeout(async()=>{
-        if(searchTerm.query !== ''){
-            const res =await fetch(`http://api.weatherapi.com/v1/search.json?key=3c67497885894786bf5103257242701&q=${searchTerm.query}`)
-            const data = await res.json()
-            searchTerm.results = data
-            // console.log(searchTerm.results)
-        }
-        else{
-            searchTerm.results = null
-        }
-    },500)
+  clearTimeout(searchTerm.timout)
+  searchTerm.timout = setTimeout(async()=>{
+    if(searchTerm.query !== ''){
+      const res =await fetch(`http://api.weatherapi.com/v1/search.json?key=3c67497885894786bf5103257242701&q=${searchTerm.query}`)
+      const data = await res.json()
+      searchTerm.results = data
+      // console.log(searchTerm.results)
+    }
+    else{
+      searchTerm.results = null
+    }
+  },500)
 }
 
 const getWheater = (id)=>{
-    if(id){
-        fetch(`http://api.weatherapi.com/v1/forecast.json?key=3c67497885894786bf5103257242701&q=id:${id}&days=3&aqi=no&alerts=no`)
-        .then(response => response.json())
-            .then(data => {
-                emit('place-data',data);
-                searchTerm.query = ''
-                searchTerm.results = null
-            })
-    }
+  if(id){
+    fetch(`http://api.weatherapi.com/v1/forecast.json?key=3c67497885894786bf5103257242701&q=id:${id}&days=3&aqi=no&alerts=no`)
+    .then(response => response.json())
+    .then(data => {
+      emit('place-data',data);
+      searchTerm.query = ''
+      searchTerm.results = null
+    })
+  }
 }
+
 </script>
 
 <template>
