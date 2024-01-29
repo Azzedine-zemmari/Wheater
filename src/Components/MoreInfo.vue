@@ -9,6 +9,7 @@ const { place } = defineProps(['place']);
 <template>
   <div
     class="absolute bg-white/80 backdrop-blur-sm text-slate-900 inset-x-0 bottom-0 rounded-t-lg p-3 md:p-8"
+    style="height: 80vh; overflow-y: auto;"
   >
     <!-- Close button -->
     <div class="flex justify-end mb-6 md:mb-10">

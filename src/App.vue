@@ -27,7 +27,7 @@
     </div>
 
     <!-- Cards -->
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid md:grid-cols-2 gap-4">
       <div v-for="plase in places">
         <WheaterCard 
         :place="plase"
