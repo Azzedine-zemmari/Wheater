@@ -2,22 +2,22 @@
 import { reactive } from 'vue';
 const emit = defineEmits(['place-data'])
 
-const searchTerm = reactive({
-  query:'',
-  timout:null,
-  results:null
+const search = reactive({
+  term:'',
+  time:null,
+  result:null
 })
 const handleShearchTerm = ()=>{
-  clearTimeout(searchTerm.timout)
-  searchTerm.timout = setTimeout(async()=>{
-    if(searchTerm.query !== ''){
-      const res =await fetch(`https://api.weatherapi.com/v1/search.json?key=3c67497885894786bf5103257242701&q=${searchTerm.query}`)
+  clearTimeout(search.time)
+  search.time = setTimeout(async()=>{
+    if(search.term !== ''){
+      const res =await fetch(`https://api.weatherapi.com/v1/search.json?key=3c67497885894786bf5103257242701&q=${search.term}`)
       const data = await res.json()
-      searchTerm.results = data
-      // console.log(searchTerm.results)
+      search.result = data
+      // console.log(search.result)
     }
     else{
-      searchTerm.results = null
+      search.result = null
     }
   },500)
 }
@@ -28,8 +28,8 @@ const getWheater = (id)=>{
     .then(response => response.json())
     .then(data => {
       emit('place-data',data);
-      searchTerm.query = ''
-      searchTerm.results = null
+      search.term = ''
+      search.result = null
     })
   }
 }
@@ -46,14 +46,14 @@ const getWheater = (id)=>{
           type="text"
           placeholder="Search for a place"
           class="rounded-r-lg p-2 border-0 outline-0 focus:ring-2 focus:ring-indigo-600 ring-inset w-full"
-          v-model="searchTerm.query"
+          v-model="search.term"
           @input="handleShearchTerm"
         />
       </div>
     </form>
     <!-- search suggestions -->
-    <div v-if="searchTerm.results !== null" class="bg-white my-2 rounded-lg shadow-lg">
-      <div v-for="place in searchTerm.results" :key="place.id">
+    <div v-if="search.result !== null" class="bg-white my-2 rounded-lg shadow-lg">
+      <div v-for="place in search.result" :key="place.id">
         <button class="px-3 my-2 hover:text-indigo-600 hover:font-bold  text-left" @click="getWheater(place.id)">{{ place.name }} , {{ place.region }} , {{ place.country }}</button>
       </div>
     </div>
