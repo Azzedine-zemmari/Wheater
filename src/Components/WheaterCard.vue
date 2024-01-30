@@ -33,13 +33,13 @@
       </div>
   
       <!-- info -->
-      <div v-show="showDetail">
-        <MoreInfo :place="place" @close-info="showDetail = false"/>
+      <div v-show="detail">
+        <MoreInfo :place="place" @close-info="detail = false"/>
       </div>
   
       <!-- forecast btn -->
       <div class="flex justify-end items-center gap-1 mt-10">
-        <button @click="showDetail = true" >More <i class="fa-solid fa-arrow-right text-sm -mb-px"></i></button>
+        <button @click="detail = true" >More <i class="fa-solid fa-arrow-right text-sm -mb-px"></i></button>
       </div>
     </div>
   </template>
@@ -58,5 +58,5 @@ defineProps({
 //   const time = new Date(place.location.localtime).getHours();
 //   return time < 20 ? 'bg-yellow-300' : 'bg-slate-600';
 // }
-const showDetail = ref(false)
+const detail = ref(false)
 </script>
