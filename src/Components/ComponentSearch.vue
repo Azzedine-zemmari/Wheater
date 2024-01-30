@@ -1,6 +1,5 @@
 <script setup>
 import { reactive } from 'vue';
-import { WEATHER_API_KEY } from '../config';
 const emit = defineEmits(['place-data'])
 
 const searchTerm = reactive({
@@ -12,7 +11,7 @@ const handleShearchTerm = ()=>{
   clearTimeout(searchTerm.timout)
   searchTerm.timout = setTimeout(async()=>{
     if(searchTerm.query !== ''){
-      const res =await fetch(`https://api.weatherapi.com/v1/search.json?key=${WEATHER_API_KEY}&q=${searchTerm.query}`)
+      const res =await fetch(`https://api.weatherapi.com/v1/search.json?key=3c67497885894786bf5103257242701&q=${searchTerm.query}`)
       const data = await res.json()
       searchTerm.results = data
       // console.log(searchTerm.results)
@@ -25,7 +24,7 @@ const handleShearchTerm = ()=>{
 
 const getWheater = (id)=>{
   if(id){
-    fetch(`https://api.weatherapi.com/v1/forecast.json?key=${WEATHER_API_KEY}&q=id:${id}&days=3&aqi=no&alerts=no`)
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=3c67497885894786bf5103257242701&q=id:${id}&days=3&aqi=no&alerts=no`)
     .then(response => response.json())
     .then(data => {
       emit('place-data',data);
