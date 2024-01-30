@@ -1,4 +1,5 @@
   <script setup>
+    import { SpeedInsights } from '@vercel/speed-insights/vue';
     import { ref } from 'vue';
     import Compoenent from './Components/ComponentSearch.vue'
     import WheaterCard from './Components/WheaterCard.vue';
@@ -35,6 +36,7 @@
       </div>
     </div>
   </main>
+  <SpeedInsights />
 </template>
 
 
