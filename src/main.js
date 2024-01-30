@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/vue"
 import { createApp } from 'vue'
 import './input.css'
 
