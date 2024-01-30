@@ -37,4 +37,4 @@ A simple weather application built with Vue 3, Tailwind CSS, and powered by the 
 
 5. **application**
 
-   <a href='wheater-8gnzvkjwu-azzedine-zemmari.vercel.app'>Wheter App ✨</a>
+  <a href='https://wheater-beta.vercel.app/'> Wheater App </a>
