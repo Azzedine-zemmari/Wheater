@@ -35,4 +35,6 @@ A simple weather application built with Vue 3, Tailwind CSS, and powered by the 
 
    npm run serve
 
+5. **application**
 
+   <a href='wheater-8gnzvkjwu-azzedine-zemmari.vercel.app'>Wheter App ✨</a>
