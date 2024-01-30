@@ -1,7 +1,22 @@
-# Vue 3 + Vite
+# Weather App
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A simple weather application built with Vue 3, Tailwind CSS, and powered by the [WeatherAPI](https://www.weatherapi.com/) to provide weather information for cities around the world.
 
-## Recommended IDE Setup
+## Features
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- **Search:** Easily search for the weather conditions in any city globally.
+- **Detailed Weather Information:** Get comprehensive details about the weather, including temperature, wind speed, time, and more.
+- **Responsive Design:** The app is designed to be responsive, ensuring a seamless experience on various devices.
+
+## Technologies Used
+
+- **Vue 3:** A JavaScript framework for building user interfaces.
+- **Tailwind CSS:** A utility-first CSS framework for building modern designs.
+- **WeatherAPI:** An API that provides comprehensive weather data.
+
+## Getting Started
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/Azzedine-zemmari/Wheater.git
