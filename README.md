@@ -27,14 +27,10 @@ A simple weather application built with Vue 3, Tailwind CSS, and powered by the 
    cd weather-app
    npm install
 
-3. **Configuration**
-   
-   Open the src/config.js file and replace the WEATHER_API_KEY placeholder with your actual WeatherAPI key.
-
 4.**Run the Wheather App**
 
    npm run serve
 
 5. **application**
 
-  <a href='https://wheater-beta.vercel.app/'> Wheater App </a>
+  <a href='https://weatherwiseapp-dun.vercel.app/'> Wheater App </a>
