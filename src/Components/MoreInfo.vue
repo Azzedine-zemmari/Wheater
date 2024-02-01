@@ -61,9 +61,6 @@ const { place } = defineProps(['place']);
     <!-- Last update and delete -->
     <div class="flex flex-col justify-center md:flex-row md:justify-between items-center">
       <h3 class="text-slate-900/50 text-center">last update:{{ place.current.last_updated }}</h3>
-      <button>
-        <i class="fa-solid fa-trash"></i>
-      </button>
     </div>
   </div>
 </template>
